@@ -1,0 +1,579 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sha",
+				"shape_mask.png"
+			],
+			[
+				"second",
+				"secondary_rgb"
+			],
+			[
+				"primary",
+				"primary_rgb"
+			],
+			[
+				"cre",
+				"create_pattern"
+			],
+			[
+				"mask",
+				"mask_spilled_paint.png"
+			],
+			[
+				"backgro",
+				"background_d90429.png"
+			],
+			[
+				"add",
+				"add_child"
+			],
+			[
+				"qu",
+				"queue_free"
+			],
+			[
+				"wasps",
+				"wasps_killed"
+			],
+			[
+				"quee",
+				"queens_hatched"
+			],
+			[
+				"rounds_",
+				"rounds_finished"
+			],
+			[
+				"save_",
+				"save_statistics"
+			],
+			[
+				"_on_Game",
+				"_on_GameArea_game_over"
+			],
+			[
+				"main",
+				"main_resource"
+			],
+			[
+				"Main",
+				"MAIN_PATH"
+			],
+			[
+				"map",
+				"map_position_x"
+			],
+			[
+				"map_p",
+				"map_position"
+			],
+			[
+				"base_",
+				"base_queens"
+			],
+			[
+				"update",
+				"update_honey_produced"
+			],
+			[
+				"honey",
+				"honey_produced"
+			],
+			[
+				"Global",
+				"GlobalContext"
+			],
+			[
+				"Resource",
+				"ResourcesProducedVBox"
+			],
+			[
+				"queen",
+				"queen_lifetime"
+			],
+			[
+				"larva",
+				"larva_produced"
+			],
+			[
+				"near",
+				"nearest_wasp"
+			],
+			[
+				"finish",
+				"finish_round"
+			],
+			[
+				"finis",
+				"finish_round_mode"
+			],
+			[
+				"GlobalContext",
+				"GlobalContext.round_started"
+			],
+			[
+				"finish_",
+				"finish_round_mode"
+			],
+			[
+				"get_",
+				"get_nodes_in_group"
+			],
+			[
+				"current",
+				"current_round"
+			],
+			[
+				"game_are",
+				"game_area_path"
+			],
+			[
+				"game_",
+				"game_area_path"
+			],
+			[
+				"_on_GameArea_",
+				"_on_GameArea_update_hud"
+			],
+			[
+				"new_",
+				"new_warriors"
+			],
+			[
+				"wor",
+				"workers_deployed"
+			],
+			[
+				"queens_",
+				"queens_deployed"
+			],
+			[
+				"warriros",
+				"warriors_deployed"
+			],
+			[
+				"warriors",
+				"warriors_deployed"
+			],
+			[
+				"workers",
+				"workers_deployed"
+			],
+			[
+				"has",
+				"has_method"
+			],
+			[
+				"In",
+				"InputEvent"
+			],
+			[
+				"init",
+				"init_menu"
+			],
+			[
+				"get",
+				"get_nodes_in_group"
+			],
+			[
+				"tile_sel",
+				"tile_selection_hive"
+			],
+			[
+				"tile_select",
+				"tile_selection_active"
+			],
+			[
+				"tile_s",
+				"tile_selection_active"
+			],
+			[
+				"cell",
+				"cell_size"
+			],
+			[
+				"spaw",
+				"spawn_pos"
+			],
+			[
+				"tile_",
+				"tile_selection_mode"
+			],
+			[
+				"worker",
+				"worker_target"
+			],
+			[
+				"tab",
+				"tab_to_toggle"
+			],
+			[
+				"set_",
+				"set_tab_selectable"
+			],
+			[
+				"tile_selec",
+				"tile_selection_current_target"
+			],
+			[
+				"tile",
+				"tile_selection_current_target"
+			],
+			[
+				"initi",
+				"initial_hive_pos.x"
+			],
+			[
+				"clos",
+				"closest_target"
+			],
+			[
+				"ti",
+				"tile_selection"
+			],
+			[
+				"S",
+				"SELECT_MODE"
+			],
+			[
+				"pr",
+				"product"
+			],
+			[
+				"Pr",
+				"ProductForm"
+			],
+			[
+				"pro",
+				"product_detail_view"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "import/experiment/generate.sh",
+			"settings":
+			{
+				"buffer_size": 1570,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Inst",
+				"Package Control: Install Package"
+			],
+			[
+				"reindent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"Install Pak",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Contr",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/pmarkee/Godot/Meggmorize",
+		"/home/pmarkee/Godot/Meggmorize/import",
+		"/home/pmarkee/Godot/Meggmorize/import/experiment"
+	],
+	"file_history":
+	[
+		"/home/pmarkee/Godot/Meggmorize/import/experiment/generate.py",
+		"/home/pmarkee/workspace/jerryscript/tests/jerry/regression-test-issue-1309.js",
+		"/home/pmarkee/asd",
+		"/home/pmarkee/tld",
+		"/home/pmarkee/workspace/jerryscript/jerry-core/parser/js/js-scanner-util.c",
+		"/home/pmarkee/workspace/jerryscript/jerry-core/parser/js/common.h",
+		"/home/pmarkee/workspace/jerryscript/jerry-core/parser/js/js-lexer.c",
+		"/home/pmarkee/workspace/jerryscript/jerry-core/parser/js/byte-code.h",
+		"/home/pmarkee/workspace/jerryscript/.gitignore",
+		"/home/pmarkee/workspace/jerryscript/jerryscript.sublime-project",
+		"/run/media/pmarkee/ADATOK/Peti/progstuff/puzzlesolver/solve.py",
+		"/run/media/pmarkee/ADATOK/Peti/progstuff/go/main.go",
+		"/run/media/pmarkee/ADATOK/Peti/progstuff/go/bubblesort.go",
+		"/run/media/pmarkee/ADATOK/Peti/progstuff/beadando/4inarow/readchar.c",
+		"/run/media/pmarkee/ADATOK/Peti/progstuff/beadando/bmp_transform/transform.c",
+		"/run/media/pmarkee/ADATOK/Peti/progstuff/beadando/4inarow/p_amoba.c",
+		"/run/media/pmarkee/ADATOK/Peti/progstuff/beadando/4inarow/game.c",
+		"/run/media/pmarkee/ADATOK/Peti/progstuff/mazesolver/maze.py",
+		"/run/media/pmarkee/ADATOK/wkincstar",
+		"/home/pmarkee/Downloads/Agent(1).java",
+		"/home/pmarkee/Downloads/Agent.java",
+		"/home/pmarkee/Godot/tower-defense/src/game/GlobalContext.gd",
+		"/run/media/pmarkee/729c254e-e2a5-4a93-891b-50aab35d2aae/pmarkee/workspace/mestint/Agent.java",
+		"/home/pmarkee/Godot/tower-defense/src/menu/button/ButtonBase.gd",
+		"/home/pmarkee/Godot/tower-defense/src/game/Statistics.gd",
+		"/home/pmarkee/Godot/tower-defense/src/game/unit/Worker.gd",
+		"/home/pmarkee/Godot/tower-defense/src/game/unit/Queen.gd",
+		"/home/pmarkee/Godot/tower-defense/src/game/unit/Unit.gd",
+		"/home/pmarkee/Godot/tower-defense/src/menu/statistics/StatisticsMenu.gd",
+		"/home/pmarkee/Godot/tower-defense/SpinBoxTheme_BlackBubble.tres",
+		"/home/pmarkee/Godot/tower-defense/rules-draft.md",
+		"/home/pmarkee/Godot/tower-defense/src/game/unit/Wasp.gd",
+		"/home/pmarkee/Godot/tower-defense/src/game/unit/Bee.gd",
+		"/home/pmarkee/Godot/tower-defense/src/game/ui/hive_menu/HiveMenu.gd",
+		"/home/pmarkee/Godot/tower-defense/src/game/world/Hive.gd",
+		"/home/pmarkee/workspace/Szakdoga/sources",
+		"/home/pmarkee/Godot/tower-defense/log.txt",
+		"/home/pmarkee/workspace/Kompletta/about_us",
+		"/home/pmarkee/workspace/Kompletta/your_website_will_never_be_finished",
+		"/home/pmarkee/Godot/tower-defense/src/game/unit/Warrior.gd",
+		"/home/pmarkee/Godot/tower-defense/project.godot",
+		"/home/pmarkee/Godot/tower-defense/BlackBubble36.tres",
+		"/home/pmarkee/Godot/tower-defense/tower-defense.sublime-project",
+		"/home/pmarkee/Godot/tower-defense/icon.png",
+		"/home/pmarkee/workspace/resume/cv-site/Rácz Kata_files/style.css",
+		"/home/pmarkee/workspace/resume/cv-site/Rácz Kata.html",
+		"/home/pmarkee/workspace/resume/cv-site/index.html",
+		"/home/pmarkee/Godot/tower-defense/src/game/ui/GameOver/GameOver.gd",
+		"/home/pmarkee/workspace/resume/cv.md",
+		"/home/pmarkee/Desktop/exodus-exports/bitcoin-txs-2020-09-14_13-43-23.csv",
+		"/home/pmarkee/Godot/tower-defense/src/game/ui/HUD/HUD.gd",
+		"/home/pmarkee/Downloads/pizza/pizza/fonts/flaticon/font/flaticon.css",
+		"/home/pmarkee/Downloads/pizza/pizza/menu.html",
+		"/home/pmarkee/Godot/tower-defense/icon.png.import",
+		"/home/pmarkee/Godot/tower-defense/src/game/GameArea.gd",
+		"/home/pmarkee/Godot/tower-defense/.gitignore",
+		"/home/pmarkee/Godot/tower-defense/scene/game/unit/Unit.tscn",
+		"/home/pmarkee/Godot/tower-defense/scene/game/unit/Warrior.tscn",
+		"/home/pmarkee/Godot/tower-defense/scene/game/unit/Bee.tscn",
+		"/home/pmarkee/Godot/tower-defense/README.md",
+		"/home/pmarkee/Godot/tower-defense/.import/bee.png-4bcf3ae47d205b4bb30508f0f70ff95f.md5",
+		"/home/pmarkee/Godot/tower-defense/assets/ui/honeycomb.jpg",
+		"/home/pmarkee/Godot/tower-defense/assets/unit/bee.png",
+		"/home/pmarkee/Godot/tower-defense/assets/fonts/bulb-font/Bulb-mRoj.ttf",
+		"/home/pmarkee/Godot/tower-defense/assets/fonts/bulb-font/Bulb-81nM.otf",
+		"/home/pmarkee/Godot/tower-defense/assets/fonts/bulb-font/misc/Readme.txt",
+		"/home/pmarkee/Godot/tower-defense/BulbFont.tres",
+		"/run/media/pmarkee/ADATOK/games/F1 Challenge 99-02 Online (2020 Edition)/Save/pmarkee/pmarkee.PLR",
+		"/run/media/pmarkee/ADATOK/games/F1 Challenge 99-02 (www.getpcgame.com)/Game/SeasonData/F1_1999.gdb",
+		"/home/pmarkee/Downloads/pizza/pizza/js/main.js",
+		"/home/pmarkee/workspace/react/pizzeria-frontend/src/App.js",
+		"/home/pmarkee/Downloads/pizza/pizza/index.html",
+		"/home/pmarkee/Német/leben-ohne-luxus",
+		"/home/pmarkee/Downloads/pizza/pizza/contact.html",
+		"/home/pmarkee/workspace/react/todo-app/src/components/MainContent.js",
+		"/home/pmarkee/workspace/django/trydjango/src/templates/product/create.html",
+		"/home/pmarkee/workspace/django/trydjango/src/templates/product/detail.html",
+		"/home/pmarkee/workspace/django/trydjango/src/templates/home.html",
+		"/home/pmarkee/workspace/django/trydjango/src/templates/base.html",
+		"/home/pmarkee/workspace/django/trydjango/src/products/forms.py",
+		"/home/pmarkee/workspace/django/trydjango/src/products/views.py",
+		"/home/pmarkee/workspace/django/trydjango/src/products/models.py",
+		"/home/pmarkee/workspace/django/trydjango/src/trydjango/urls.py",
+		"/home/pmarkee/workspace/django/trydjango/src/trydjango/product/detail.html",
+		"/home/pmarkee/workspace/django/trydjango/src/pages/views.py",
+		"/home/pmarkee/workspace/django/trydjango/src/trydjango/settings.py",
+		"/home/pmarkee/workspace/django/trydjango/src/products/admin.py",
+		"/home/pmarkee/workspace/django/trydjango/src/templates/navbar.html",
+		"/home/pmarkee/workspace/django/trydjango/src/products/migrations/0003_auto_20200606_0741.py",
+		"/home/pmarkee/workspace/django/trydjango/src/products/migrations/0002_product_featured.py",
+		"/home/pmarkee/workspace/django/trydjango/src/products/migrations/0001_initial.py"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 149.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"compose",
+			"name",
+			"pattern2_file",
+			"rgb",
+			"create_pattern",
+			"primary_color",
+			"background",
+			"PurePath"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "import/experiment/generate.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1570,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1119,
+								1119
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 44.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Meggmorize.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Godot/tower-defense/tower-defense.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 284.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
