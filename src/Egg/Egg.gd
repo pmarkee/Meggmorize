@@ -1,8 +1,12 @@
-extends KinematicBody2D
+extends RigidBody2D
 class_name Egg
 
 const _pattern_path: = "res://import/Egg/Pattern"
 var rng = RandomNumberGenerator.new()
+
+var drag_possible: = false
+var drag_active: = false
+var drag_force: = 300
 
 
 func _ready() -> void:
@@ -10,12 +14,43 @@ func _ready() -> void:
 
     var pattern_files = _list_files_in_directory(_pattern_path)
     var pattern_choice = rng.randi_range(0, pattern_files.size() - 1)
-    
-    print(pattern_files)
-    print(pattern_files[pattern_choice])
-    print("%s/%s" % [_pattern_path, pattern_files[pattern_choice]])
-    # TODO
+
     $Body/Pattern.texture = load("%s/%s" % [_pattern_path, pattern_files[pattern_choice]])
+
+
+func _integrate_forces(state: Physics2DDirectBodyState) -> void:
+    if Input.is_action_pressed("mouse_left") and drag_possible:
+        if drag_possible and not drag_active:
+            drag_active = true
+            $DragTimer.start()
+
+        var direction: = (get_viewport().get_mouse_position() - position).normalized()
+        applied_force = direction * drag_force
+    elif Input.is_action_just_released("mouse_left") and drag_active:
+        disable_drag()
+        $DragTimer.stop()
+    else:
+        applied_force = Vector2.ZERO
+
+
+func _on_Egg_mouse_entered() -> void:
+    if not drag_active:
+        drag_possible = true
+
+
+func _on_Egg_mouse_exited() -> void:
+    if not drag_active:
+        drag_possible = false
+
+
+func _on_DragTimer_timeout() -> void:
+    disable_drag()
+
+
+func disable_drag() -> void:
+    print("disabling drag")
+    drag_active = false
+    drag_possible = false
 
 
 func _list_files_in_directory(path: String) -> Array:
