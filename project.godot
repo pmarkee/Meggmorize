@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "RigidBody2D",
+"base": "StaticBody2D",
+"class": "Chicken",
+"language": "GDScript",
+"path": "res://src/Chicken/Chicken.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Egg",
 "language": "GDScript",
-"path": "res://src/Egg/Egg.gd"
+"path": "res://src/Actors/Egg/Egg.gd"
 } ]
 _global_script_class_icons={
+"Chicken": "",
 "Egg": ""
 }
 
@@ -54,6 +60,7 @@ mouse_left={
 
 2d_physics/layer_1="eggs"
 2d_physics/layer_2="player"
+2d_physics/layer_3="chicken"
 
 [rendering]
 

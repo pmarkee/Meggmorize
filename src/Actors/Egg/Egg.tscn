@@ -1,14 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://import/Egg/Body.png" type="Texture" id=1]
-[ext_resource path="res://src/Egg/Egg.gd" type="Script" id=2]
+[ext_resource path="res://src/Actors/Egg/Egg.gd" type="Script" id=2]
 
-[node name="Egg" type="RigidBody2D"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30.6427, 10 )
+
+[node name="Egg" type="KinematicBody2D" groups=[
+"eggs",
+]]
 input_pickable = true
 collision_mask = 3
-mass = 0.1
-gravity_scale = 10.0
 script = ExtResource( 2 )
+speed = Vector2( 0, 500 )
 
 [node name="Body" type="Sprite" parent="."]
 scale = Vector2( 0.15, 0.15 )
@@ -20,9 +24,14 @@ texture = ExtResource( 1 )
 scale = Vector2( 0.15, 0.15 )
 polygon = PoolVector2Array( 13, -228.9, 32, -226.9, 32, -225.8, 50, -220.8, 50, -219.6, 68, -211.6, 68, -210.6, 76, -206.6, 76, -205.6, 83, -201.6, 83, -200.4, 84.4, -199, 87, -199, 87, -197.4, 106, -180.4, 106, -179, 108, -179, 108, -176.4, 118, -166.4, 118, -164.5, 121, -162.5, 121, -160.3, 132, -146.3, 132, -144.4, 137, -138.4, 137, -136.2, 139.6, -131, 140.4, -131, 142, -129.4, 142, -127.3, 155, -102.2, 155, -99.2, 161, -87.2, 161, -84, 164.7, -73, 165.6, -73, 167, -70.2, 167, -66.2, 170, -60.2, 170, -56, 175, -41.2, 175, -36.3, 180, -17.1, 180, -10, 185, 18.9, 185, 31, 186, 78, 184.9, 78, 182.9, 106, 181.9, 106, 180.9, 117, 179.8, 117, 176.8, 133, 175.8, 133, 173.8, 143, 172.7, 143, 167.7, 158, 166.7, 158, 164.7, 164, 163.6, 164, 154.6, 180, 153.6, 180, 151.6, 184, 150.4, 184, 145, 189.4, 145, 191.4, 143.4, 193, 141.5, 193, 135.5, 200, 133.4, 200, 127.4, 206, 125.2, 206, 108.3, 217, 105.3, 217, 94.3, 223, 91.2, 223, 81.2, 227, 77.1, 227, 69.2, 230, 63.2, 230, 51.1, 233, 43.1, 233, 14.1, 236, 12, 236, -34, 235, -34, 234, -44, 234, -44, 232.9, -70, 229.9, -70, 228.8, -95, 222.8, -95, 221.8, -102, 219.8, -102, 218.6, -105.2, 217, -109, 217, -109, 215.6, -128, 205.6, -128, 204.6, -132, 202.6, -132, 201.4, -133.4, 200, -136, 200, -136, 198.4, -141.4, 193, -143.4, 193, -145, 191.4, -145, 189.5, -152, 183.5, -152, 181.5, -155, 179.5, -155, 177.5, -161, 170.4, -161, 168.4, -165, 163.4, -165, 161.2, -173, 145.2, -173, 142.3, -181, 116.2, -181, 110.2, -183, 105.2, -183, 98, -186, 77.1, -186, 30, -185, 30, -185, 18, -184, 18, -184, 10, -182.9, 10, -177.9, -29, -176.8, -29, -171.8, -54, -170.9, -54, -169.9, -61, -168.8, -61, -160.7, -88, -159.7, -88, -154.7, -103, -153.6, -103, -151, -108.2, -151, -112, -149.6, -112, -141.6, -130, -140.6, -130, -131.6, -147, -130.6, -147, -125.6, -156, -124.5, -156, -121, -160.3, -121, -163, -119.6, -163, -117.6, -167, -116.4, -167, -114, -169.4, -114, -172, -112.4, -172, -94.4, -192, -92.4, -192, -82.4, -202, -80.4, -202, -75.4, -207, -73.4, -207, -67.4, -212, -65.2, -212, -62, -213.6, -62, -214.4, -60.4, -216, -57.2, -216, -49.3, -221, -46.2, -221, -31.2, -227, -25.2, -227, -20.2, -229, -13, -229, -13, -230, 13, -230 )
 
-[node name="DragTimer" type="Timer" parent="."]
-wait_time = 0.4
-one_shot = true
-[connection signal="mouse_entered" from="." to="." method="_on_Egg_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_Egg_mouse_exited"]
-[connection signal="timeout" from="DragTimer" to="." method="_on_DragTimer_timeout"]
+[node name="BucketDetector" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BucketDetector"]
+position = Vector2( 0, 26.888 )
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+rect = Rect2( -20, -40, 40, 20 )
+[connection signal="area_entered" from="BucketDetector" to="." method="_on_BucketDetector_area_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
