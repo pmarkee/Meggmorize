@@ -264,10 +264,11 @@
 			}
 		},
 		{
-			"file": "/home/pmarkee/Godot/follow-mouse/Dummy.gd",
+			"file": "src/Actors/Bucket/Bucket.gd",
 			"settings":
 			{
-				"buffer_size": 439,
+				"buffer_size": 925,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -325,10 +326,15 @@
 	"expanded_folders":
 	[
 		"/home/pmarkee/Godot/Meggmorize",
-		"/home/pmarkee/Godot/Meggmorize/src"
+		"/home/pmarkee/Godot/Meggmorize/src",
+		"/home/pmarkee/Godot/Meggmorize/src/Actors",
+		"/home/pmarkee/Godot/Meggmorize/src/Actors/Bucket"
 	],
 	"file_history":
 	[
+		"/home/pmarkee/Godot/basic-platformer/src/Actors/Player.tscn",
+		"/home/pmarkee/Godot/basic-platformer/src/Actors/camera/GridSnapper.gd",
+		"/home/pmarkee/Godot/follow-mouse/Dummy.gd",
 		"/home/pmarkee/Godot/basic-platformer/src/Actors/Enemy.tscn",
 		"/home/pmarkee/Godot/Meggmorize/src/Egg/Egg.gd",
 		"/home/pmarkee/Godot/Meggmorize/src/Bucket/Bucket.gd",
@@ -472,7 +478,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -488,8 +494,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								630,
+								630
 							]
 						],
 						"settings":
@@ -502,35 +508,37 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/home/pmarkee/Godot/follow-mouse/Dummy.gd",
+					"file": "src/Actors/Bucket/Bucket.gd",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 439,
+						"buffer_size": 925,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								370,
+								370
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/GDScript (Godot Engine)/GDScript.sublime-syntax"
+							"syntax": "Packages/GDScript (Godot Engine)/GDScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

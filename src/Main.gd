@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var egg_scene = preload("res://src/Actors/Egg/Egg.tscn")
 
@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _on_Chicken_spawn_egg(chicken: Chicken) -> void:
     var new_egg = egg_scene.instance()
-    new_egg.position = Vector2(chicken.position.x, chicken.position.y + 200)
+    new_egg.position = Vector2(chicken.position.x, chicken.position.y + 40)
     new_egg.connect("caught", self, "_on_Egg_caught")
     add_child(new_egg)
 
