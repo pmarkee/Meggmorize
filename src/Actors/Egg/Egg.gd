@@ -3,20 +3,15 @@ class_name Egg
 
 signal caught(kind)
 
-const _pattern_path: = "res://import/Egg/Pattern"
-var _texture_path: String
+var _pattern_file: String setget init
 
-var rng = RandomNumberGenerator.new()
+
+func init(pattern_file: String) -> void:
+    _pattern_file = pattern_file
 
 
 func _ready() -> void:
-    rng.randomize()
-
-    var pattern_files = _list_files_in_directory(_pattern_path)
-    var pattern_choice = rng.randi_range(0, pattern_files.size() - 1)
-    _texture_path = pattern_files[pattern_choice]
-
-    $Body/Pattern.texture = load("%s/%s" % [_pattern_path, _texture_path])
+    $Body/Pattern.texture = load(_pattern_file)
 
 
 func _physics_process(delta: float) -> void:
@@ -27,7 +22,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_BucketDetector_area_entered(area: Area2D) -> void:
-    emit_signal("caught", _texture_path)
+    emit_signal("caught", _pattern_file)
     queue_free()
 
 
@@ -47,25 +42,6 @@ func calculate_move_velocity(
     var ret = linear_velocity
     ret.y += gravity * get_physics_process_delta_time()
     return ret
-
-
-
-func _list_files_in_directory(path: String) -> Array:
-    var files = []
-    var dir = Directory.new()
-    dir.open(path)
-    dir.list_dir_begin()
-
-    while true:
-        var file = dir.get_next()
-        if file == "":
-            break
-        elif file.ends_with(".png"):
-            files.append(file)
-
-    dir.list_dir_end()
-
-    return files
 
 
 func _on_VisibilityNotifier2D_screen_exited() -> void:
