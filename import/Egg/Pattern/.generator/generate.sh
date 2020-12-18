@@ -1,20 +1,16 @@
 #!/bin/sh
 
-TMP_PATH=./tmp
 BG_PATH=./backgrounds
 PATTERN_PATH=./patterns
 SHAPE_MASK=./shape_mask.png
 MAGICK_COMMAND=magick
+COLOR_FILE=./colors
 
-[[ -e $TMP_PATH ]] && rm -rf $TMP_PATH
-mkdir $TMP_PATH
-
-# # Create pattern from secondary color and pattern mask
-# convert background_2b2d42.png mask_spilled_paint.png -alpha off -compose CopyOpacity -composite -format png $TMP_PATH/asd.png
-# # Add the primary color
-# convert background_d90429.png $TMP_PATH/asd.png -gravity center -composite -format png $TMP_PATH/asd2.png
-# # Mask the pattern with the egg shape to create the final image
-# convert $TMP_PATH/asd2.png shape_mask.png -alpha off -compose CopyOpacity -composite -format png $TMP_PATH/asd3.png
+# First create the backgrounds
+while IFS= read -r line; do
+    rgb=$(echo $line | tr -d '#')
+    $MAGICK_COMMAND -size 500x500 xc:${line} $BG_PATH/background_${rgb}.png
+done < colors
 
 for secondary in $(ls $BG_PATH); do
     for pattern in $(ls $PATTERN_PATH); do
@@ -26,6 +22,7 @@ for secondary in $(ls $BG_PATH); do
             pattern_name=$(echo $pattern | cut -d '.' -f 1 | cut -d '_' -f 2)
 
             output_file=../${primary_rgb}_${secondary_rgb}_${pattern_name}.png
+            echo $output_file
 
             $MAGICK_COMMAND $BG_PATH/$secondary $PATTERN_PATH/$pattern -alpha off -compose CopyOpacity -composite -format png $output_file
             $MAGICK_COMMAND $BG_PATH/$primary $output_file -gravity center -composite -format png $output_file

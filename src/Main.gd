@@ -19,7 +19,7 @@ func _ready() -> void:
         chicken.connect("spawn_egg", self, "_on_Chicken_spawn_egg")
 
 
-func _on_Chicken_spawn_egg(chicken: Chicken) -> void:á
+func _on_Chicken_spawn_egg(chicken: Chicken) -> void:
     # Create an egg with one of the patterns.
     var pattern_choice = rng.randi_range(0, _pattern_files.size() - 1)
     var pattern_file = "%s/%s" % [_pattern_path, _pattern_files[pattern_choice]]
