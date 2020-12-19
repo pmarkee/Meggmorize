@@ -46,6 +46,7 @@ _global_script_class_icons={
 
 config/name="Meggmorize"
 run/main_scene="res://src/Main.tscn"
+boot_splash/image="res://import/UI/splash/wallpaper.png"
 config/icon="res://icon.png"
 
 [display]
