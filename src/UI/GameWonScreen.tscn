@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UI/GameWonScreen.gd" type="Script" id=1]
+
+[node name="GameWonScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 925.0
+margin_top = 434.0
+margin_right = 995.0
+margin_bottom = 646.0
+custom_constants/separation = 50
+
+[node name="GameWonLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 70.0
+margin_bottom = 14.0
+text = "YOU WON!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EggsCaughtLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 64.0
+margin_right = 70.0
+margin_bottom = 78.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeLeftLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 128.0
+margin_right = 70.0
+margin_bottom = 142.0
+align = 1
+valign = 1
+
+[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 192.0
+margin_right = 70.0
+margin_bottom = 212.0
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]

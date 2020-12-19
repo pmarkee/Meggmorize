@@ -18,10 +18,28 @@ _global_script_classes=[ {
 "class": "Egg",
 "language": "GDScript",
 "path": "res://src/Actors/Egg/Egg.gd"
+}, {
+"base": "Control",
+"class": "GameOverScreen",
+"language": "GDScript",
+"path": "res://src/UI/GameOverScreen.gd"
+}, {
+"base": "Control",
+"class": "GameWonScreen",
+"language": "GDScript",
+"path": "res://src/UI/GameWonScreen.gd"
+}, {
+"base": "Control",
+"class": "StartScreen",
+"language": "GDScript",
+"path": "res://src/UI/StartScreen.gd"
 } ]
 _global_script_class_icons={
 "Chicken": "",
-"Egg": ""
+"Egg": "",
+"GameOverScreen": "",
+"GameWonScreen": "",
+"StartScreen": ""
 }
 
 [application]
