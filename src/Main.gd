@@ -6,7 +6,7 @@ const _pattern_path: = "res://import/Egg/Pattern"
 var _pattern_files: Array
 var egg_caught: = {}
 var rng: = RandomNumberGenerator.new()
-
+var paused: = true
 
 func _ready() -> void:
     rng.randomize()
@@ -58,15 +58,21 @@ func _list_files_in_directory(path: String) -> Array:
 
 
 func game_over() -> void:
+    if paused:
+        return
+
     pause()
     $UI/BlurEffect.show()
     $UI/GameOverScreen.display(_pattern_files.size(), egg_caught.size(), 0)
 
 
 func game_won() -> void:
+    if paused:
+        return
+
     pause()
     $UI/BlurEffect.show()
-    $UI/GameWonScreen.display(egg_caught.size(), 0)
+    $UI/GameWonScreen.display(_pattern_files.size(), 0)
 
 
 func start_game() -> void:
@@ -75,10 +81,12 @@ func start_game() -> void:
 
 
 func pause() -> void:
+    paused = true
     get_tree().call_group("chicken", "pause", true)
 
 
 func unpause() -> void:
+    paused = false
     get_tree().call_group("chicken", "pause", false)
 
 

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/UI/GameWonScreen.gd" type="Script" id=1]
+[ext_resource path="res://import/UI/font/BasicFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://import/UI/font/GameWonFont.tres" type="DynamicFont" id=3]
 
 [node name="GameWonScreen" type="Control"]
 anchor_right = 1.0
@@ -18,15 +20,16 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 925.0
-margin_top = 434.0
-margin_right = 995.0
-margin_bottom = 646.0
+margin_left = 820.0
+margin_top = 331.0
+margin_right = 1100.0
+margin_bottom = 749.0
 custom_constants/separation = 50
 
 [node name="GameWonLabel" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 70.0
-margin_bottom = 14.0
+margin_right = 280.0
+margin_bottom = 85.0
+custom_fonts/font = ExtResource( 3 )
 text = "YOU WON!"
 align = 1
 valign = 1
@@ -35,9 +38,10 @@ __meta__ = {
 }
 
 [node name="EggsCaughtLabel" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 64.0
-margin_right = 70.0
-margin_bottom = 78.0
+margin_top = 135.0
+margin_right = 280.0
+margin_bottom = 194.0
+custom_fonts/font = ExtResource( 2 )
 align = 1
 valign = 1
 __meta__ = {
@@ -45,16 +49,18 @@ __meta__ = {
 }
 
 [node name="TimeLeftLabel" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 128.0
-margin_right = 70.0
-margin_bottom = 142.0
+margin_top = 244.0
+margin_right = 280.0
+margin_bottom = 303.0
+custom_fonts/font = ExtResource( 2 )
 align = 1
 valign = 1
 
 [node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 192.0
-margin_right = 70.0
-margin_bottom = 212.0
+margin_top = 353.0
+margin_right = 280.0
+margin_bottom = 418.0
+custom_fonts/font = ExtResource( 2 )
 text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false
