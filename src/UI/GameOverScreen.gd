@@ -5,7 +5,7 @@ signal restart
 
 const template: = "GAME OVER! You caught %d of %d eggs. Time left: %d"
 const eggs_caught_template: = "You caught %d of %d eggs."
-const time_left_template: = "Time left: %d"
+const time_left_template: = "Time left: %s"
 
 onready var for_real_label = $CenterContainer/VBoxContainer/ForRealLabel
 onready var eggs_caught_label = $CenterContainer/VBoxContainer/EggsCaughtLabel
@@ -19,7 +19,7 @@ func _on_RestartButton_pressed() -> void:
 func display(
         number_total: int,
         number_caught: int,
-        time_left: int,
+        time_left: String,
         was_fake_game_over: bool
     ) -> void:
     update_elements(number_total, number_caught, time_left, was_fake_game_over)
@@ -29,7 +29,7 @@ func display(
 func update_elements(
         number_total: int,
         number_caught: int,
-        time_left: int,
+        time_left: String,
         was_fake_game_over: bool
     ) -> void:
     if was_fake_game_over:
@@ -38,4 +38,4 @@ func update_elements(
         for_real_label.hide()
 
     eggs_caught_label.text = eggs_caught_template % [number_caught, number_total]
-    time_left_label = time_left_template % time_left
+    time_left_label.text = time_left_template % time_left

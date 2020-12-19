@@ -2,8 +2,8 @@ extends Control
 
 var egg_scene = preload("res://src/Actors/Egg/Egg.tscn")
 
-const _pattern_path: = "res://import/Egg/Pattern"
-var _pattern_files: Array
+const pattern_path: = "res://import/Egg/Pattern"
+var pattern_files: Array
 var egg_caught: = {}
 
 var rng: = RandomNumberGenerator.new()
@@ -14,19 +14,29 @@ var is_fake_game_over: = false
 var was_fake_game_over: = false
 var fake_game_over_chance: = 0.1
 
+const time_template: = "%d:%02d"
+
 
 func _ready() -> void:
     rng.randomize()
-    _pattern_files = _list_files_in_directory(_pattern_path)
+    pattern_files = list_files_in_directory(pattern_path)
 
     for chicken in get_tree().get_nodes_in_group("chicken"):
         chicken.connect("spawn_egg", self, "_egg_lifecycle", [chicken])
 
 
+func _process(delta: float) -> void:
+    $ClockLabel.text = format_time(int(round($GameTimer.time_left)))
+
+
+func _on_GameTimer_timeout() -> void:
+    game_over()
+
+
 func _egg_lifecycle(chicken: Chicken) -> void:
     # Create an egg with one of the patterns.
-    var pattern_choice = rng.randi_range(0, _pattern_files.size() - 1)
-    var pattern_file = "%s/%s" % [_pattern_path, _pattern_files[pattern_choice]]
+    var pattern_choice = rng.randi_range(0, pattern_files.size() - 1)
+    var pattern_file = "%s/%s" % [pattern_path, pattern_files[pattern_choice]]
 
     var new_egg = egg_scene.instance()
     new_egg.init(pattern_file)
@@ -47,8 +57,8 @@ func _egg_lifecycle(chicken: Chicken) -> void:
         end_fake_game_over()
 
     egg_caught[pattern_file] = true
-    if egg_caught.size() == _pattern_files.size():
-        print("YOU WON! You found all %d eggs" % _pattern_files.size())
+    if egg_caught.size() == pattern_files.size():
+        print("YOU WON! You found all %d eggs" % pattern_files.size())
         game_won()
         return
 
@@ -57,7 +67,11 @@ func _egg_lifecycle(chicken: Chicken) -> void:
         return
 
 
-func _list_files_in_directory(path: String) -> Array:
+func format_time(sec: int) -> String:
+    return time_template % [floor(sec / 60), sec % 60]
+
+
+func list_files_in_directory(path: String) -> Array:
     var files = []
     var dir = Directory.new()
     dir.open(path)
@@ -79,9 +93,15 @@ func game_over() -> void:
     if paused:
         return
 
+    var time_left: = format_time(int(round($GameTimer.time_left)))
     pause()
     $Screens/BlurEffect.show()
-    $Screens/GameOverScreen.display(_pattern_files.size(), egg_caught.size(), 0, was_fake_game_over)
+    $Screens/GameOverScreen.display(
+        pattern_files.size(),
+        egg_caught.size(),
+        time_left,
+        was_fake_game_over
+    )
 
 
 func game_won() -> void:
@@ -90,7 +110,7 @@ func game_won() -> void:
 
     pause()
     $Screens/BlurEffect.show()
-    $Screens/GameWonScreen.display(_pattern_files.size(), 0)
+    $Screens/GameWonScreen.display(pattern_files.size(), 0)
 
 
 func fake_game_over() -> void:
@@ -118,11 +138,15 @@ func start_game() -> void:
 
 func pause() -> void:
     paused = true
+    $GameTimer.stop()
+    $ClockLabel.hide()
     get_tree().call_group("chicken", "pause", true)
 
 
 func unpause() -> void:
     paused = false
+    $GameTimer.start()
+    $ClockLabel.show()
     get_tree().call_group("chicken", "pause", false)
 
 
