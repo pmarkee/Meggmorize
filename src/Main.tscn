@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://import/Background/3e80897da2bed8975b7b39e55d2a768d--wood-texture-seamless-wood-texture-drawing.jpg" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Bucket/Bucket.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/UI/GameOverScreen.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/UI/GameWonScreen.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/UI/StartScreen.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/UI/FakeGameOverScreen.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
@@ -47,14 +48,14 @@ position = Vector2( 1159.25, 196 )
 [node name="Chicken4" parent="Game" instance=ExtResource( 4 )]
 position = Vector2( 1622.77, 196 )
 
-[node name="UI" type="Control" parent="."]
+[node name="Screens" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BlurEffect" type="TextureRect" parent="UI"]
+[node name="BlurEffect" type="TextureRect" parent="Screens"]
 material = SubResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -64,13 +65,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StartScreen" parent="UI" instance=ExtResource( 9 )]
+[node name="StartScreen" parent="Screens" instance=ExtResource( 9 )]
 
-[node name="GameOverScreen" parent="UI" instance=ExtResource( 7 )]
+[node name="GameOverScreen" parent="Screens" instance=ExtResource( 7 )]
 visible = false
 
-[node name="GameWonScreen" parent="UI" instance=ExtResource( 8 )]
+[node name="GameWonScreen" parent="Screens" instance=ExtResource( 8 )]
 visible = false
-[connection signal="start_game" from="UI/StartScreen" to="." method="start_game" flags=6]
-[connection signal="restart" from="UI/GameOverScreen" to="." method="start_game"]
-[connection signal="restart" from="UI/GameWonScreen" to="." method="start_game"]
+
+[node name="FakeGameOverScreen" parent="Screens" instance=ExtResource( 10 )]
+visible = false
+[connection signal="start_game" from="Screens/StartScreen" to="." method="start_game" flags=6]
+[connection signal="restart" from="Screens/GameOverScreen" to="." method="start_game"]
+[connection signal="restart" from="Screens/GameWonScreen" to="." method="start_game"]

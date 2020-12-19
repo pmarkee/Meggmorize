@@ -5,8 +5,15 @@ var egg_scene = preload("res://src/Actors/Egg/Egg.tscn")
 const _pattern_path: = "res://import/Egg/Pattern"
 var _pattern_files: Array
 var egg_caught: = {}
+
 var rng: = RandomNumberGenerator.new()
+
 var paused: = true
+
+var is_fake_game_over: = false
+var was_fake_game_over: = false
+var fake_game_over_chance: = 0.1
+
 
 func _ready() -> void:
     rng.randomize()
@@ -32,11 +39,22 @@ func _egg_lifecycle(chicken: Chicken) -> void:
         # TODO
         print("GAME OVER, score: %d" % egg_caught.size())
         game_over()
+        return
+
+    # If there is a fake game over and a new egg is caught, end the fake
+    print("is_fake_game_over: %s" % is_fake_game_over)
+    if is_fake_game_over:
+        end_fake_game_over()
 
     egg_caught[pattern_file] = true
     if egg_caught.size() == _pattern_files.size():
         print("YOU WON! You found all %d eggs" % _pattern_files.size())
         game_won()
+        return
+
+    if not was_fake_game_over and rng.randf_range(0.0, 1.0) < fake_game_over_chance:
+        fake_game_over()
+        return
 
 
 func _list_files_in_directory(path: String) -> Array:
@@ -62,8 +80,8 @@ func game_over() -> void:
         return
 
     pause()
-    $UI/BlurEffect.show()
-    $UI/GameOverScreen.display(_pattern_files.size(), egg_caught.size(), 0)
+    $Screens/BlurEffect.show()
+    $Screens/GameOverScreen.display(_pattern_files.size(), egg_caught.size(), 0, was_fake_game_over)
 
 
 func game_won() -> void:
@@ -71,8 +89,26 @@ func game_won() -> void:
         return
 
     pause()
-    $UI/BlurEffect.show()
-    $UI/GameWonScreen.display(_pattern_files.size(), 0)
+    $Screens/BlurEffect.show()
+    $Screens/GameWonScreen.display(_pattern_files.size(), 0)
+
+
+func fake_game_over() -> void:
+    if paused:
+        return
+
+    is_fake_game_over = true
+    was_fake_game_over = true
+    print("is_fake_game_over: %s" % is_fake_game_over)
+    $Screens/BlurEffect.show()
+    $Screens/FakeGameOverScreen.show()
+
+
+func end_fake_game_over() -> void:
+    is_fake_game_over = false
+    print("is_fake_game_over: %s" % is_fake_game_over)
+    $Screens/BlurEffect.hide()
+    $Screens/FakeGameOverScreen.hide()
 
 
 func start_game() -> void:
@@ -91,6 +127,11 @@ func unpause() -> void:
 
 
 func reset() -> void:
+    if not paused:
+        pause()
+
     egg_caught = {}
-    for element in $UI.get_children():
+    is_fake_game_over = false
+    was_fake_game_over = false
+    for element in $Screens.get_children():
         element.hide()
