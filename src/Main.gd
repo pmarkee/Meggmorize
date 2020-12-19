@@ -93,6 +93,9 @@ func game_over() -> void:
     if paused:
         return
 
+    if is_fake_game_over:
+        end_fake_game_over()
+
     var time_left: = format_time(int(round($GameTimer.time_left)))
     pause()
     $Screens/BlurEffect.show()
