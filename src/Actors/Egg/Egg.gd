@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
     )
 
 
-func _on_BucketDetector_area_entered(area: Area2D) -> void:
+func _on_BasketDetector_area_entered(area: Area2D) -> void:
     emit_signal("caught")
     queue_free()
 

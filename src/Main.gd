@@ -102,8 +102,8 @@ func game_over() -> void:
 
     var time_left: = format_time(int(round($GameTimer.time_left)))
     pause()
-    $Screens/BlurEffect.show()
-    $Screens/GameOverScreen.display(
+    $ScreensCanvasLayer/Screens/BlurEffect.show()
+    $ScreensCanvasLayer/Screens/GameOverScreen.display(
         pattern_files.size(),
         egg_caught.size(),
         time_left,
@@ -118,8 +118,8 @@ func game_won() -> void:
 
     var time_left: = format_time(int(round($GameTimer.time_left)))
     pause()
-    $Screens/BlurEffect.show()
-    $Screens/GameWonScreen.display(pattern_files.size(), time_left)
+    $ScreensCanvasLayer/Screens/BlurEffect.show()
+    $ScreensCanvasLayer/Screens/GameWonScreen.display(pattern_files.size(), time_left)
     adjust_clock()
 
 
@@ -130,15 +130,15 @@ func fake_game_over() -> void:
     is_fake_game_over = true
     was_fake_game_over = true
     print("is_fake_game_over: %s" % is_fake_game_over)
-    $Screens/BlurEffect.show()
-    $Screens/FakeGameOverScreen.show()
+    $ScreensCanvasLayer/Screens/BlurEffect.show()
+    $ScreensCanvasLayer/Screens/FakeGameOverScreen.show()
 
 
 func end_fake_game_over() -> void:
     is_fake_game_over = false
     print("is_fake_game_over: %s" % is_fake_game_over)
-    $Screens/BlurEffect.hide()
-    $Screens/FakeGameOverScreen.hide()
+    $ScreensCanvasLayer/Screens/BlurEffect.hide()
+    $ScreensCanvasLayer/Screens/FakeGameOverScreen.hide()
 
 
 func start_game() -> void:
@@ -167,7 +167,7 @@ func reset() -> void:
     egg_caught = {}
     is_fake_game_over = false
     was_fake_game_over = false
-    for element in $Screens.get_children():
+    for element in $ScreensCanvasLayer/Screens.get_children():
         element.hide()
 
 
