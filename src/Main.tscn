@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://import/Background/3e80897da2bed8975b7b39e55d2a768d--wood-texture-seamless-wood-texture-drawing.jpg" type="Texture" id=1]
+[ext_resource path="res://import/Pole/pole.png" type="Texture" id=2]
 [ext_resource path="res://src/UI/BlurEffect.shader" type="Shader" id=3]
 [ext_resource path="res://src/Chicken/Chicken.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Main.gd" type="Script" id=5]
@@ -54,6 +55,10 @@ wait_time = 90.0
 one_shot = true
 
 [node name="Game" type="Node2D" parent="."]
+
+[node name="pole" type="Sprite" parent="Game"]
+position = Vector2( 955.408, 170.086 )
+texture = ExtResource( 2 )
 
 [node name="Basket" parent="Game" instance=ExtResource( 12 )]
 position = Vector2( 955.408, 937 )

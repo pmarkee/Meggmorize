@@ -51,18 +51,15 @@ func _egg_lifecycle(chicken: Chicken) -> void:
     yield(new_egg, "caught")
     if egg_caught.has(pattern_file):
         # TODO
-        print("GAME OVER, score: %d" % egg_caught.size())
         game_over()
         return
 
     # If there is a fake game over and a new egg is caught, end the fake
-    print("is_fake_game_over: %s" % is_fake_game_over)
     if is_fake_game_over:
         end_fake_game_over()
 
     egg_caught[pattern_file] = true
     if egg_caught.size() == pattern_files.size():
-        print("YOU WON! You found all %d eggs" % pattern_files.size())
         game_won()
         return
 
@@ -129,14 +126,12 @@ func fake_game_over() -> void:
 
     is_fake_game_over = true
     was_fake_game_over = true
-    print("is_fake_game_over: %s" % is_fake_game_over)
     $ScreensCanvasLayer/Screens/BlurEffect.show()
     $ScreensCanvasLayer/Screens/FakeGameOverScreen.show()
 
 
 func end_fake_game_over() -> void:
     is_fake_game_over = false
-    print("is_fake_game_over: %s" % is_fake_game_over)
     $ScreensCanvasLayer/Screens/BlurEffect.hide()
     $ScreensCanvasLayer/Screens/FakeGameOverScreen.hide()
 
