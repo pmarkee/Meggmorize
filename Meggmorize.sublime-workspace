@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"numb",
+				"number_caught"
+			],
+			[
+				"egg",
+				"egg_caught"
+			],
+			[
 				"texture",
 				"_texture_path"
 			],
@@ -263,25 +271,8 @@
 			"file": "import/Egg/Pattern/.generator/generate.sh",
 			"settings":
 			{
-				"buffer_size": 1232,
+				"buffer_size": 1047,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": ".gitignore",
-			"settings":
-			{
-				"buffer_size": 24,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "import/Egg/Pattern/.generator/colors",
-			"settings":
-			{
-				"buffer_size": 24,
 				"line_ending": "Unix"
 			}
 		},
@@ -289,7 +280,31 @@
 			"file": "src/Main.gd",
 			"settings":
 			{
-				"buffer_size": 1810,
+				"buffer_size": 3885,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Chicken/Chicken.gd",
+			"settings":
+			{
+				"buffer_size": 710,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/UI/GameOverScreen.gd",
+			"settings":
+			{
+				"buffer_size": 1160,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/UI/GameWonScreen.gd",
+			"settings":
+			{
+				"buffer_size": 665,
 				"line_ending": "Unix"
 			}
 		},
@@ -297,7 +312,7 @@
 			"file": "src/Actors/Egg/Egg.gd",
 			"settings":
 			{
-				"buffer_size": 1035,
+				"buffer_size": 669,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -368,10 +383,13 @@
 		"/home/pmarkee/Godot/Meggmorize/import",
 		"/home/pmarkee/Godot/Meggmorize/import/Egg",
 		"/home/pmarkee/Godot/Meggmorize/import/Egg/Pattern",
-		"/home/pmarkee/Godot/Meggmorize/import/Egg/Pattern/showcase"
+		"/home/pmarkee/Godot/Meggmorize/import/Egg/Pattern/.generator"
 	],
 	"file_history":
 	[
+		"/home/pmarkee/Godot/Meggmorize/import/Egg/Pattern/.generator/generate.sh",
+		"/home/pmarkee/Godot/Meggmorize/.gitignore",
+		"/home/pmarkee/Godot/Meggmorize/import/Egg/Pattern/.generator/colors",
 		"/home/pmarkee/Godot/Meggmorize/import/Egg/Pattern/showcase/generate_showcase.sh",
 		"/home/pmarkee/Godot/Meggmorize/import/Egg/Pattern/.gitignore",
 		"/home/pmarkee/Godot/basic-platformer/src/Actors/Player.tscn",
@@ -480,13 +498,14 @@
 	],
 	"find":
 	{
-		"height": 29.0
+		"height": 41.0
 	},
 	"find_in_files":
 	{
 		"height": 149.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -494,6 +513,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"PRIMARY_PATH",
+			"_list_files_in_directory",
+			"clock_wait_time",
+			"_pattern_files",
+			"_pattern_path",
+			"was_game_over",
+			"$UI",
+			"start_game",
+			"unpause",
+			"paused",
+			"reset",
+			":",
+			"var",
+			"number_of_caught",
+			"_on_Chicken_spawn_egg",
 			"line",
 			"inited",
 			"game_over",
@@ -537,15 +571,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1232,
+						"buffer_size": 1047,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								85,
-								85
+								154,
+								154
 							]
 						],
 						"settings":
@@ -563,27 +597,29 @@
 				},
 				{
 					"buffer": 1,
-					"file": ".gitignore",
+					"file": "src/Main.gd",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 24,
+						"buffer_size": 3885,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								23,
-								23
+								761,
+								761
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
+							"syntax": "Packages/GDScript (Godot Engine)/GDScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 240.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -591,47 +627,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "import/Egg/Pattern/.generator/colors",
+					"file": "src/Chicken/Chicken.gd",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 24,
+						"buffer_size": 710,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7,
-								7
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/Main.gd",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1810,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								993,
-								993
+								285,
+								285
 							]
 						],
 						"settings":
@@ -644,24 +652,80 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "src/Actors/Egg/Egg.gd",
+					"buffer": 3,
+					"file": "src/UI/GameOverScreen.gd",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1035,
+						"buffer_size": 1160,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								260,
-								260
+								981,
+								981
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GDScript (Godot Engine)/GDScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/UI/GameWonScreen.gd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 665,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								339,
+								339
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GDScript (Godot Engine)/GDScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/Actors/Egg/Egg.gd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 669,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								145,
+								145
 							]
 						],
 						"settings":
@@ -678,7 +742,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "src/Actors/Bucket/Bucket.gd",
 					"semi_transient": false,
 					"settings":
@@ -704,7 +768,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]

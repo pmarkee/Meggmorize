@@ -15,11 +15,15 @@ var was_fake_game_over: = false
 var fake_game_over_chance: = 0.1
 
 const time_template: = "%d:%02d"
+const base_clock_time: = 90
+const minimum_clock_time: = 30
+var clock_adjust_threshold: int
 
 
 func _ready() -> void:
     rng.randomize()
     pattern_files = list_files_in_directory(pattern_path)
+    clock_adjust_threshold = pattern_files.size() * 2 / 3
 
     for chicken in get_tree().get_nodes_in_group("chicken"):
         chicken.connect("spawn_egg", self, "_egg_lifecycle", [chicken])
@@ -105,15 +109,18 @@ func game_over() -> void:
         time_left,
         was_fake_game_over
     )
+    adjust_clock()
 
 
 func game_won() -> void:
     if paused:
         return
 
+    var time_left: = format_time(int(round($GameTimer.time_left)))
     pause()
     $Screens/BlurEffect.show()
-    $Screens/GameWonScreen.display(pattern_files.size(), 0)
+    $Screens/GameWonScreen.display(pattern_files.size(), time_left)
+    adjust_clock()
 
 
 func fake_game_over() -> void:
@@ -162,3 +169,11 @@ func reset() -> void:
     was_fake_game_over = false
     for element in $Screens.get_children():
         element.hide()
+
+
+func adjust_clock() -> void:
+    if egg_caught.size() >= clock_adjust_threshold:
+        if $GameTimer.wait_time > minimum_clock_time:
+            $GameTimer.wait_time -= 10 + (egg_caught.size() - clock_adjust_threshold) * 2
+    else:
+        $GameTimer.wait_time = base_clock_time

@@ -12,12 +12,12 @@
 [ext_resource path="res://src/UI/FakeGameOverScreen.tscn" type="PackedScene" id=10]
 [ext_resource path="res://import/UI/font/Deepo.otf" type="DynamicFontData" id=11]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 128
 extra_spacing_char = 4
 font_data = ExtResource( 11 )
 
-[sub_resource type="ShaderMaterial" id=1]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 3 )
 shader_param/blur_amount = 3.0
 
@@ -41,7 +41,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "1234"
 align = 1
 valign = 1
@@ -78,7 +78,7 @@ __meta__ = {
 }
 
 [node name="BlurEffect" type="TextureRect" parent="Screens"]
-material = SubResource( 1 )
+material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 6 )

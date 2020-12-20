@@ -29,19 +29,19 @@ __meta__ = {
 }
 
 [node name="MainContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 666.0
-margin_top = 174.0
-margin_right = 1254.0
-margin_bottom = 906.0
+margin_left = 630.0
+margin_top = 142.0
+margin_right = 1290.0
+margin_bottom = 937.0
 custom_constants/separation = 100
 
 [node name="TitleContainer" type="VBoxContainer" parent="CenterContainer/MainContainer"]
-margin_right = 588.0
+margin_right = 660.0
 margin_bottom = 384.0
 custom_constants/separation = 200
 
 [node name="TitleLabel" type="Label" parent="CenterContainer/MainContainer/TitleContainer"]
-margin_right = 588.0
+margin_right = 660.0
 margin_bottom = 119.0
 custom_fonts/font = SubResource( 1 )
 text = "Meggmorize"
@@ -50,7 +50,7 @@ valign = 1
 
 [node name="StartGameButton" type="Button" parent="CenterContainer/MainContainer/TitleContainer"]
 margin_top = 319.0
-margin_right = 588.0
+margin_right = 660.0
 margin_bottom = 384.0
 custom_fonts/font = ExtResource( 2 )
 text = "Start Game"
@@ -60,21 +60,21 @@ __meta__ = {
 
 [node name="InstructionsContainer2" type="VBoxContainer" parent="CenterContainer/MainContainer"]
 margin_top = 484.0
-margin_right = 588.0
-margin_bottom = 732.0
+margin_right = 660.0
+margin_bottom = 795.0
 alignment = 1
 
 [node name="Instruction1" type="Label" parent="CenterContainer/MainContainer/InstructionsContainer2"]
-margin_right = 588.0
+margin_right = 660.0
 margin_bottom = 59.0
 custom_fonts/font = ExtResource( 2 )
-text = "Catch eggs with your bucket."
+text = "Catch all eggs with your bucket in time."
 align = 1
 valign = 1
 
 [node name="Instruction2" type="Label" parent="CenterContainer/MainContainer/InstructionsContainer2"]
 margin_top = 63.0
-margin_right = 588.0
+margin_right = 660.0
 margin_bottom = 122.0
 custom_fonts/font = ExtResource( 2 )
 text = "do not catch the same kind of egg twice."
@@ -86,10 +86,10 @@ __meta__ = {
 
 [node name="Instruction3" type="Label" parent="CenterContainer/MainContainer/InstructionsContainer2"]
 margin_top = 126.0
-margin_right = 588.0
+margin_right = 660.0
 margin_bottom = 185.0
 custom_fonts/font = ExtResource( 2 )
-text = "Don't forget to rate the game."
+text = "If you do very well, your time will decrease."
 align = 1
 valign = 1
 __meta__ = {
@@ -98,8 +98,20 @@ __meta__ = {
 
 [node name="Instruction4" type="Label" parent="CenterContainer/MainContainer/InstructionsContainer2"]
 margin_top = 189.0
-margin_right = 588.0
+margin_right = 660.0
 margin_bottom = 248.0
+custom_fonts/font = ExtResource( 2 )
+text = "Don't forget to rate the game."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instruction5" type="Label" parent="CenterContainer/MainContainer/InstructionsContainer2"]
+margin_top = 252.0
+margin_right = 660.0
+margin_bottom = 311.0
 custom_fonts/font = ExtResource( 2 )
 text = "Good luck, have fun!"
 align = 1
