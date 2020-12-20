@@ -80,9 +80,14 @@ func list_files_in_directory(path: String) -> Array:
 
     while true:
         var file = dir.get_next()
+
         if file == "":
             break
-        elif file.ends_with(".png"):
+
+        if file.ends_with(".import"):
+            file = file.replace(".import", "")
+
+        if file.ends_with(".png"):
             files.append(file)
 
     dir.list_dir_end()
